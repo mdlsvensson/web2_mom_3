@@ -1,0 +1,71 @@
+body {
+  background-color: #333;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+small,
+p,
+ul {
+  color: white;
+}
+
+a {
+  color: #aaf;
+}
+
+h1,
+h2,
+h3,
+small {
+  font-family: Arial;
+}
+
+p {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+h1 {
+  margin: 0;
+  border-bottom: 3px solid white;
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+header,
+footer {
+  width: 100%;
+  background: #444;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #555;
+  width: fit-content;
+  border-radius: 2px;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  padding: 10px;
+}
+
+#inner-container {
+  padding: 10px;
+  text-align: center;
+}
+
+#author-name {
+  width: 120px;
+}

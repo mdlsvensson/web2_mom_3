@@ -1,0 +1,18 @@
+<?php include("includes/config.php"); ?>
+<?php include("includes/functions.php"); ?>
+
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <title><?= $site_title . $divider . $page_title; ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Objektorienterad PHP</h1>
+            <?php include("includes/menu.php"); ?>
+        </header>
+    <div id="inner-container">
