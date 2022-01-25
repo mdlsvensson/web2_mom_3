@@ -37,5 +37,9 @@
   </div>
 </form>
 
+<form action="deleteall.php" methord="post">
+  <button type="submit">Clear</button>
+</form>
+
 <?php
 include("includes/footer.php");

@@ -8,4 +8,6 @@
     }
   }
   file_put_contents('todolist.json', json_encode($todoListData, JSON_PRETTY_PRINT));
+
+  header('Location: index.php');
 ?>
