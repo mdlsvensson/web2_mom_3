@@ -14,7 +14,7 @@
     public function validate() {
       $this->validateTodo();
       $this->validateAuthor();
-      $this->getDate();
+      $this->setDate();
       $this->genId();
       // Add errors to data
       $this->data += array('errors' => $this->errors);
@@ -42,7 +42,7 @@
     }
 
     // generate a date string
-    private function getDate() {
+    private function setDate() {
       $this->data += array('date' => date('Y-m-d:H.i.s'));
     }
 
