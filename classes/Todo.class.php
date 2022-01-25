@@ -2,25 +2,19 @@
   class Todo {
     private $data;
     private $errors = [];
-    private static $fields = ['todo', 'author'];
 
     public function __construct($post) {
       $this->data = $post;
     }
 
     public function validate() {
-      foreach(self::$fields as $field) {
-        if (!array_key_exists($field, $this->data)) {
-          trigger_error("$field is not present in data");
-          return;
-        }
-      }
-
       $this->validateTodo();
       $this->validateAuthor();
       $this->getDate();
+      $this->genId();
       $this->data += array('errors' => $this->errors);
-      return $this->data;
+      unset($this->data['submit']);
+      return $this;
     }
 
     private function validateTodo() {
@@ -35,17 +29,23 @@
     private function validateAuthor() {
       if (empty($this->data['author'])) {
         $this->addError('author', 'Please enter author.');
-      } else {
-        
       }
     }
 
     private function getDate() {
-      $this->data += array('date' => date('Y-m-d:H.i'));
+      $this->data += array('date' => date('Y-m-d:H.i.s'));
+    }
+
+    private function genId() {
+      $this->data += array('id' => uniqid());
     }
 
     private function addError($key, $val) {
       $this->errors[$key] = $val;
+    }
+
+    public function getData() {
+      return $this->data;
     }
   }
 ?>
